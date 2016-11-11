@@ -1,4 +1,6 @@
-FROM jboss/wildfly:latest
+FROM jboss/wildfly:10.1.0.Final
+
+MAINTAINER Morten Sieker, sieker.dk
 
 ADD ./customization /opt/jboss/wildfly/customization/
 
