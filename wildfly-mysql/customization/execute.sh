@@ -6,8 +6,8 @@
 
 JBOSS_HOME=/opt/jboss/wildfly
 JBOSS_CLI=$JBOSS_HOME/bin/jboss-cli.sh
-JBOSS_MODE=${1:-"standalone-full"}
-JBOSS_CONFIG=${2:-"$JBOSS_MODE.xml"}
+JBOSS_MODE=${1:-"standalone"}
+JBOSS_CONFIG=${2:-"$JBOSS_MODE-full.xml"}
 
 function wait_for_server() {
   until `$JBOSS_CLI -c ":read-attribute(name=server-state)" 2> /dev/null | grep -q running`; do
